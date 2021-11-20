@@ -45,12 +45,13 @@
         $resultado->execute(array());
         while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
             echo "Nombre cliente: " .$registro["nombre"]."Precio: ".$registro["precio"]."Cantidad: ".$registro["stock"]."<br>";
+
     }}
+   
     catch(Exception $e){
-
-
-        echo "Error: ".$e->getMessage();
+        echo "Error:".$e->getMessage();
     }
+   
 
     for($i=1;$i<=$total_paginas;$i++){
         echo "<a href='?pagina=". $i . "'>".$i. "</a>  ";
