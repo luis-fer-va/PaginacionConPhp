@@ -16,10 +16,11 @@
         $resultado=$base->prepare($sql_total);
         $resultado->execute(array());
         while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
-            echo "Nombre cliente: " .$registro["nombre"]."Precio: ".$registro["precio"]."Cantidad: ".$registro["stock"];
+            echo "Nombre cliente: " .$registro["nombre"]."Precio: ".$registro["precio"]."Cantidad: ".$registro["stock"]."<br>";
         }
+        $resultado->closeCursor();
     }catch(Exception $e){
-
+        echo "Error:".$e->getMessage();
     }
 
 
